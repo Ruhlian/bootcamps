@@ -1,0 +1,24 @@
+meta {
+  name: crear nueva views
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3002/reviews
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "JS",
+    "comment": "Comentario JS",
+    "rating": 10,
+    "bootcampId": 1
+  }
+}

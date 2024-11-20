@@ -1,9 +1,0 @@
-{
-  "version": "1",
-  "name": "NEXT_BOOTCAMP_2902093",
-  "type": "collection",
-  "ignore": [
-    "node_modules",
-    ".git"
-  ]
-}

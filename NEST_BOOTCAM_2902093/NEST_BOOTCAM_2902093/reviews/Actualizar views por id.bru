@@ -1,0 +1,17 @@
+meta {
+  name: Actualizar views por id
+  type: http
+  seq: 4
+}
+
+patch {
+  url: http://localhost:3002/reviews/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Java" 
+  }
+}

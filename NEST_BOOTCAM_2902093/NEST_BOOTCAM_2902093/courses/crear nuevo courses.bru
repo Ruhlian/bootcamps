@@ -1,0 +1,26 @@
+meta {
+  name: crear nuevo courses
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3002/courses
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "WEEBBOCKETS EN JS",
+    "weeks": 4,
+    "tuition": 562.83,
+    "minimumSkill": "Beginner",
+    "createdAt": "2022-02-02",
+    "bootcampId": 1
+  }
+}

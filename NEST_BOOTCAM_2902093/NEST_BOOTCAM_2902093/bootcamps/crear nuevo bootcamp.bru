@@ -1,0 +1,26 @@
+meta {
+  name: crear nuevo bootcamp
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3002/bootcamps
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name":  "JS avanzado",
+    "phone": 13245678,
+    "addres": "caller 32 bis sur 13 10",
+    "topics": "JS, WEB",
+    "averageRating": 10,
+    "createdAt": "2022-02-02"
+  }
+}

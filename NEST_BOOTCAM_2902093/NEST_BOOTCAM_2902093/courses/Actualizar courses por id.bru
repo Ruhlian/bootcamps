@@ -1,0 +1,17 @@
+meta {
+  name: Actualizar courses por id
+  type: http
+  seq: 4
+}
+
+patch {
+  url: http://localhost:3002/courses/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "weeks": 6
+  }
+}
