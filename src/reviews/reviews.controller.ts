@@ -1,10 +1,5 @@
-import { BootcampsService } from './../bootcamps/bootcamps.service';
-import { BootcampsController } from './../bootcamps/bootcamps.controller';
-import { Bootcamp } from './../bootcamps/entities/bootcamp.entity';
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { ReviewsService } from './reviews.service';
-import { CreateReviewDto } from './dto/create-review.dto';
-import { UpdateReviewDto } from './dto/update-review.dto';
 
 @Controller('reviews')
 export class ReviewsController {
@@ -26,12 +21,22 @@ export class ReviewsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateReviewDto: UpdateReviewDto) {
+  update(@Param('id') id: string, @Body() updateReviewDto: any) {
     return this.reviewsService.update(+id, updateReviewDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.reviewsService.remove(+id);
+  }
+
+  /**
+   * Obtener reviews de un bootcamp con calificación mayor a 3
+   * @param bootcampId - ID del bootcamp
+   * @returns Lista de reviews con calificaciones "buenas" o "excelentes"
+   */
+  @Get('bootcamp/:bootcampId/good-reviews')
+  getGoodOrExcellentReviews(@Param('bootcampId') bootcampId: number) {
+    return this.reviewsService.getGoodOrExcellentReviews(bootcampId);
   }
 }
